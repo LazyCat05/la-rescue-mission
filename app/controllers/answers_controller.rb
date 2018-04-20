@@ -10,9 +10,11 @@ class AnswersController < ApplicationController
     @answer.question_id = @question.id
 
     if @answer.save
+      flash[:alert] = "Answer saved."
       redirect_to question_path(@question)
     else
-      render :new
+      flash[:errors] = @answer.errors.full_messages[0]
+      render "questions/show"
     end
   end
 

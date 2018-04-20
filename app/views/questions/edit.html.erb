@@ -1,4 +1,6 @@
-<h1>Please to Enter New Question</h1>
+<h1>Edit question: <%= @question.title %></h1>
+
+<p>Current Description: <%= @question.description %></p>
 
 <%= form_for(@question) do |f| %>
   <div class='field'>
